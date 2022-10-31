@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import Card from "./application_components/card.js";
+// import Card from "./application_components/card.js";
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
 

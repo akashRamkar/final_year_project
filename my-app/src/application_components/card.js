@@ -3,19 +3,21 @@ import React from "react";
 export default function card(props) {
 	return (
 		<div
-			className="card text-center"
-			style={{
-				width: "15rem;",
-				boxShadow: "1px 1px",
-				color: "grey",
-			}}
+			className="card text-center "
+			// style={
+			// 	{
+			// 		// width: "15rem;",
+			// 		// boxShadow: "1px 1px",
+			// 		// color: "grey",
+			// 	}
+			// }
 		>
-			<div className="card overflow " style={{ height: "15 rem;" }}>
+			<div className="">
 				<img
 					src={props.thumbnail}
-					className="card-img-top"
+					// className="card-img-top"
 					alt="thumbnail_image"
-					style={{ height: "15 rem;" }}
+					className="img-height img-bottom-line"
 				/>
 				<div className="card-body card-text">
 					<h5 className="text-dark card-title">{props.cardTitle}</h5>

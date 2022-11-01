@@ -1,21 +1,16 @@
-
-import "./index.css";
+//import logo from "./logo.svg";
+import "./App.css";
 import Card from "./application_components/card.js";
-import Login from "./application_components/login";
 
 function App() {
 	return (
 		<>
-			welcome to the project 
-			 <Card/>
-			<div className="App">
-             <Login/>
-			</div>
-           
-		
+			welcome to the project
+			<Card />
 		</>
 	
 	);
+
 }
 
 export default App;

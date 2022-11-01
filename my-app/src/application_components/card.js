@@ -2,16 +2,7 @@ import React from "react";
 
 export default function card(props) {
 	return (
-		<div
-			className="card text-center "
-			// style={
-			// 	{
-			// 		// width: "15rem;",
-			// 		// boxShadow: "1px 1px",
-			// 		// color: "grey",
-			// 	}
-			// }
-		>
+		<div className="card text-center ">
 			<div className="">
 				<img
 					src={props.thumbnail}

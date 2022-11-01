@@ -56,9 +56,7 @@ function App() {
 		<>
 			<Cards cards={cardsArray} />
 
-			<Cards thumbnail={Thumbnail} />
 			<Topic_Title />
-			<Card />
 		</>
 	);
 }

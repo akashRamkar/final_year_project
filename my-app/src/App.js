@@ -1,8 +1,11 @@
-// import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
-// import Card from "./application_components/card.js";
+import Topic_Title from "./application_components/Topic_Title";
+
+import "./App.css";
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
+import Card from "./application_components/card.js";
 
 function App() {
 	const cardsArray = [
@@ -52,8 +55,11 @@ function App() {
 	return (
 		<>
 			<Cards cards={cardsArray} />
+
+			<Cards thumbnail={Thumbnail} />
+			<Topic_Title />
+			<Card />
 		</>
 	);
 }
-
 export default App;

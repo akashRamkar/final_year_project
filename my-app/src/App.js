@@ -6,6 +6,7 @@ import "./App.css";
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
 import Card from "./application_components/card.js";
+import Footer from "./application_components/Footer";
 
 function App() {
 	const cardsArray = [
@@ -26,7 +27,7 @@ function App() {
 		{
 			srNO: 2,
 			name: "operating-system",
-			cardTitle: "operating-system",
+			cardTitle: "OS",
 			thumbnail: Thumbnail,
 			description: "this is the card discription",
 		},
@@ -47,16 +48,19 @@ function App() {
 		{
 			srNO: 5,
 			name: "Data structures",
-			cardTitle: "Data structures",
+			cardTitle: "DSA",
 			thumbnail: Thumbnail,
 			description: "this is the card discription",
 		},
 	];
 	return (
 		<>
-			<Cards cards={cardsArray} />
+			
 
+
+			<Cards cards={cardsArray} />
 			<Topic_Title />
+			<Footer/>
 		</>
 	);
 }

@@ -58,12 +58,11 @@ function App() {
 	];
 	return (
 		<>
-<<<<<<< HEAD
-=======
+
+
 			<Navbar/>
             <Hometext/>
             <img  className="photo" src={img1} alt=""/>
->>>>>>> 87e1b21 (insert img and implement navbar)
 			<Cards cards={cardsArray} />
 			<Topic_Title />
 			<Footer />

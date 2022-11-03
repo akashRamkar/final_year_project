@@ -55,19 +55,9 @@ function App() {
 	];
 	return (
 		<>
-<<<<<<< HEAD
-			<div className="middle-layer box grid">
-				<Topic_Title />
-				<Cards className="padding-left-10px box grid" cards={cardsArray} />
-			</div>
-=======
-			
-
-
 			<Cards cards={cardsArray} />
 			<Topic_Title />
-			<Footer/>
->>>>>>> c555b51ac4556a46d5f2bb7d99ad0eb2e74f0b1f
+			<Footer />
 		</>
 	);
 }

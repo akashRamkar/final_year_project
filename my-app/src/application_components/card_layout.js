@@ -7,13 +7,15 @@ export default function card_layout(props) {
 				<div className="card-img">
 					<img src={props.thumbnail} alt="thumbnail" />
 				</div>
+				<div className="box">
 				<div className="center-text">
 					<h5>{props.cardTitle}</h5>
 				</div>
-				<p>{props.description}</p>
+				<p id="decrip">{props.description}</p>
 				<a href="..." className="btn btn-primary btn-center">
 					button
 				</a>
+				</div>
 			</div>
 		</>
 	);

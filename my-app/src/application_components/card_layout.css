@@ -5,7 +5,7 @@
 .card-img{
     height: 9rem;
     /* width: 9rem; */
-    overflow:hidden;
+    /* overflow:hidden; */
     display: flex;
     margin: auto;
     /* width: 50%; */
@@ -13,33 +13,59 @@
     position:initial;
 
 }
+.container-fluid {
+    margin-top: 45%;
+    max-width: 58%;
+    margin-left: 39rem;
+}
+.col-md-4{
+    
+    width: 100%;
+    padding: 26px;
+    margin-bottom: 30px;
+    /* margin-top: 20%; */
+    
+}
 .fit-text{
     overflow:hidden;
 }
 .center-text{
 display: inline-block;
 justify-content: center;
+padding: 1px;
 margin-left: auto;
 /* margin-right: 40%; */
 }
 .card-layout{
-    box-shadow: 0px 0px 15px -5px;
+    box-shadow: 0px 0px 1px 1px;
     display: inline-block;
     padding: 3px 10px;
-    border-color: black 3px;
-    border-radius: 5px;
+    border-color: rgb(133, 107, 107);
+    border-radius: 3px;
 }
 .card-border{
     border-color: gray;
     border-width: 5px;
-    box-shadow: 3px;
-    height: fit-content !important;
+    /* box-shadow: 3px;
+    height: fit-content !important; */
     width: 11rem !important;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* padding: 5px; */
 }
 .btn-center{
     margin-left:2rem;
     margin-right: 2rem;
     display:inline-blocks;
     width: 50%;
+    margin-left: 39px;
+    margin-bottom: 5px;
 
+}
+.center-text{
+    margin-left: 50px;
+}
+#decrip{
+    margin-left: 25px;
 }

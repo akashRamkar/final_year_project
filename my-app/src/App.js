@@ -5,9 +5,8 @@ import Topic_Title from "./application_components/Topic_Title";
 import "./App.css";
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
-import "./application_components/mid_component_style.css";
-// import MiddleLayer from "./application_components/mid_component";
-// import Card from "./application_components/card.js";
+import Card from "./application_components/card.js";
+import Footer from "./application_components/Footer";
 
 function App() {
 	const cardsArray = [
@@ -28,7 +27,7 @@ function App() {
 		{
 			srNO: 2,
 			name: "operating-system",
-			cardTitle: "operating-system",
+			cardTitle: "OS",
 			thumbnail: Thumbnail,
 			description: "this is the card discription",
 		},
@@ -49,17 +48,26 @@ function App() {
 		{
 			srNO: 5,
 			name: "Data structures",
-			cardTitle: "Data structures",
+			cardTitle: "DSA",
 			thumbnail: Thumbnail,
 			description: "this is the card discription",
 		},
 	];
 	return (
 		<>
+<<<<<<< HEAD
 			<div className="middle-layer box grid">
 				<Topic_Title />
 				<Cards className="padding-left-10px box grid" cards={cardsArray} />
 			</div>
+=======
+			
+
+
+			<Cards cards={cardsArray} />
+			<Topic_Title />
+			<Footer/>
+>>>>>>> c555b51ac4556a46d5f2bb7d99ad0eb2e74f0b1f
 		</>
 	);
 }

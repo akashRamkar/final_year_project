@@ -3,10 +3,13 @@ import "./App.css";
 import Topic_Title from "./application_components/Topic_Title";
 
 import "./App.css";
+import img1 from "./imageAssets/image1.png"
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
 import Card from "./application_components/card.js";
 import Footer from "./application_components/Footer";
+import Hometext from "./application_components/Hometext";
+import Navbar from "./application_components/Navbar";
 
 function App() {
 	const cardsArray = [
@@ -55,6 +58,12 @@ function App() {
 	];
 	return (
 		<>
+<<<<<<< HEAD
+=======
+			<Navbar/>
+            <Hometext/>
+            <img  className="photo" src={img1} alt=""/>
+>>>>>>> 87e1b21 (insert img and implement navbar)
 			<Cards cards={cardsArray} />
 			<Topic_Title />
 			<Footer />

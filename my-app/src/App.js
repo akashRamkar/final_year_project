@@ -5,7 +5,9 @@ import Topic_Title from "./application_components/Topic_Title";
 import "./App.css";
 import Thumbnail from "./imageAssets/pdfImage.png";
 import Cards from "./application_components/cards";
-import Card from "./application_components/card.js";
+import "./application_components/mid_component_style.css";
+// import MiddleLayer from "./application_components/mid_component";
+// import Card from "./application_components/card.js";
 
 function App() {
 	const cardsArray = [
@@ -54,9 +56,10 @@ function App() {
 	];
 	return (
 		<>
-			<Cards cards={cardsArray} />
-
-			<Topic_Title />
+			<div className="middle-layer box grid">
+				<Topic_Title />
+				<Cards className="padding-left-10px box grid" cards={cardsArray} />
+			</div>
 		</>
 	);
 }

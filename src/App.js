@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Form from "./Form";
+// import { useState } from "react";
+import "./utilityClass.css";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<div>
+				<Form />
+			</div>
+		</>
+	);
 }
-
 export default App;
+
+/* 
+
+
+
+
+const [message, setMessage] = useState("");
+	const [response, setResponse] = useState("");
+
+	const handleSubmit = (e) => {
+		// e.preventDefault();
+
+		fetch("http://localhost:3001/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ message }),
+		})
+			.then((res) => res.json())
+			.then((data) => setResponse(data.message));
+	};
+
+*/
+
+// <form onSubmit={handleSubmit}>
+// 			<div className="flex-col justify-center items-center">
+// 				<div>
+// 					{/* <label htmlFor="input-text">Enter text:</label> */}
+// 					<textarea
+// 						id="input-text"
+// 						value={message}
+// 						className=""
+// 						onChange={(e) => setMessage(e.target.value)}
+// 					/>
+// 				</div>
+// 				<button className="text-area-btn rounded" type="submit">
+// 					Submit
+// 				</button>
+// 				<div>
+// 					Response:
+// 					{response}
+// 				</div>
+// 			</div>
+// 		</form>

@@ -1,7 +1,7 @@
 // import model_pass from "./key.js";
 const OpenAI = require("openai");
 const { Configuration, OpenAIApi } = OpenAI;
-const OpenAI_API_KEY = "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";
+const OpenAI_API_KEY = "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";
 
 // Use the API_KEY variable in your code
 
@@ -34,7 +34,7 @@ app.post("/", async (req, res) => {
 	} else {
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
-			prompt: `${AI_Assist} {${message}}`,
+			prompt: `${AI_Assist}{${message}}`,
 			max_tokens: 2000,
 			temperature: 0.9,
 		});

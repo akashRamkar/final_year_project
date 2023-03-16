@@ -150,16 +150,20 @@ padding: 1px;
  }
  
  .w-500{
-     min-width: 500px;
+     width: 500px;
  }
  .h-500{
-     min-height: 500px;
+     height: 500px;
  }
  .h-250{
-     min-height: 250px;
+     height: 250px;
  }
  
  .text-area-border{
   border: 2px solid grey;
   padding:1.2rem;
+ }
+ .overflow-y-scroll{
+    overflow-x: wrap;
+    overflow-y: scroll;
  }

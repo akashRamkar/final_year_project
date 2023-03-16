@@ -1,0 +1,45 @@
+*,*::before,*::after{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+a,p{
+  color: white;
+}
+  
+
+  
+li a {
+   
+    width: 400px;
+    max-width: 430px; 
+    text-decoration: none;
+  }
+  
+ li a:hover {
+    background-color: #d4cccc;
+  }
+ 
+.footer-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   min-height:12rem;
+   width: 100%;
+   line-height: 2em;
+   background-color: rgb(59, 59, 94);
+  }
+
+.footer-list1{
+    width: 50%;
+    justify-content: center;
+    display: flex;
+   
+    background-color: pink;
+  }
+  
+p{
+    text-align: center;
+  }

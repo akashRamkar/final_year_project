@@ -2,11 +2,19 @@ import React from "react";
 import Form from "./Form";
 // import { useState } from "react";
 import "./utilityClass.css";
+import Navbar from "./Navbar";
+// import axios from "axios";
+
+import Footer from "./Footer";
+
 function App() {
 	return (
 		<>
 			<div>
+				<Navbar />
 				<Form />
+
+				<Footer />
 			</div>
 		</>
 	);

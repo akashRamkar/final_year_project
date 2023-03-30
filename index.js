@@ -1,9 +1,9 @@
 // import model_pass from "./key.js";
 const OpenAI = require("openai");
 const { Configuration, OpenAIApi } = OpenAI;
-const OpenAI_API_KEY = "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";
+require("dotenv").config();
 
-// Use the API_KEY variable in your code
+const myModel = process.env.REACT_APP_MODEL;
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -13,8 +13,8 @@ const port = 3001;
 
 // openai configuration
 const configuration = new Configuration({
-	organization: "org-c7ZduPI7p7a94CabjMU2bEXV",
-	apiKey: OpenAI_API_KEY,
+	organization: process.env.Lang_Model_ORG,
+	apiKey: myModel,
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 	res.send("sending response");
 });
 
-const AI_Assist = `summarise the below text in long paragraphs\n`;
+const AI_Assist = `summarise the below text short paragraphs\n`;
 app.post("/", async (req, res) => {
 	const { message } = req.body;
 	if (message === "" || message === null) {
@@ -35,7 +35,7 @@ app.post("/", async (req, res) => {
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
 			prompt: `${AI_Assist}{${message}}`,
-			max_tokens: 2000,
+			max_tokens: 300,
 			temperature: 0.9,
 		});
 		// console.log(response.data);
@@ -54,25 +54,6 @@ app.listen(port, () => {
 });
 
 // ***************************************************
-
-// const express = require("express");
-// const cors = require("cors");
-
-// const app = express();
-
-// app.use(cors());
-// app.use(express.json());
-// app.get("/", (req, res) => {
-// 	res.send("sending response");
-// });
-// app.post("/", (req, res) => {
-// 	console.log(req.body.message);
-// 	res.json({ message: `You sent: ${req.body.message}` });
-// });
-
-// app.listen(3001, () => {
-// 	console.log("Server running on port 3001");
-// });
 
 /*
 // former package.json

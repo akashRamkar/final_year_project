@@ -17,7 +17,7 @@ import Navbar from "./components/Navbar";
 const Mainsection = ({ used }) => {
 	return (
 		<div className="App">
-			<Navbar />
+			{/* <Navbar /> */}
 			<Herosection></Herosection>
 			<Informationsection></Informationsection>
 			<Summarizebox></Summarizebox>

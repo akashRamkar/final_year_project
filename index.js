@@ -13,8 +13,8 @@ const port = 3001;
 
 // openai configuration
 const configuration = new Configuration({
-	organization: process.env.Lang_Model_ORG,
-	apiKey: myModel,
+	organization: "org-c7ZduPI7p7a94CabjMU2bEXV",
+	apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();

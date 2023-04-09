@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+
+import AuthProvider from "./AuthContext";
 // import firebase from "firebase/compat/app";
 // const firebaseConfig = {
 // 	// Your project's configuration object
@@ -13,9 +15,11 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
+	<AuthProvider>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

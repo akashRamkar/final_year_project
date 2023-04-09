@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { useAuth } from "../AuthContext";
+
 // const express = require("express");
 // const { MongoClient } = require("mongodb");
 
@@ -10,19 +13,36 @@ function SignUp() {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [name, setName] = useState("");
+	const { currentUser, signup } = useAuth();
+	const [error, setError] = useState("");
+	const navigate = useNavigate();
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log("email:", email);
 		console.log("password:", password);
 		console.log("confirmPassword:", confirmPassword);
+		if (password !== confirmPassword) {
+			return setError("password do not match!!");
+		}
+		try {
+			setError(" ");
+			await signup(email, password);
+			// await signInWithEmailAndPassword(auth, email, password);
+			window.alert("singup success");
+			// path to navigate and TODOS:
+			//  example :- navigate("/home");
+		} catch {
+			window.alert("!!! signup FAILED!!!!!!!11");
+			setError("Failed to sign up the user");
+		}
 	};
 
 	return (
 		<div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-md">
-				<h1 class="text-2xl font-bold mb-4 text-center">
-					Login to Your Account
+				<h1 className="text-2xl font-bold mb-4 text-center">
+					Sign Up For Your Account
 				</h1>
 			</div>
 
@@ -53,7 +73,7 @@ function SignUp() {
 							>
 								Email address
 							</label>
-							<div className="mt-1">
+							<div className="mt-2">
 								<input
 									id="email"
 									name="email"
@@ -120,6 +140,7 @@ function SignUp() {
 					</form>
 				</div>
 			</div>
+			{JSON.stringify(currentUser)}
 		</div>
 	);
 }

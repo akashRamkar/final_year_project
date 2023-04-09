@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 
+import { useAuth } from "../AuthContext";
+import { useNavigate } from "react-router";
 // const uri =
 // 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
 
 function Login() {
+	const { currentuser, signIn } = useAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-
-	const handleSubmit = (e) => {
+	const navigate = useNavigate();
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		console.log("email:", email);
+
 		console.log("password:", password);
+		await signIn(email, password);
+		// path to navigate and TODOS:
+		// example :- navigate("/signup");
 	};
 
 	return (

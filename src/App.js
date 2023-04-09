@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Mainsection from "./Mainsection";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
+// import { AuthProvider } from "./AuthContext";
 
 function App() {
 	const [used, setUsed] = useState(data);
@@ -20,7 +21,7 @@ function App() {
 					element={<Mainsection used={used}></Mainsection>}
 				></Route>
 				<Route path="/login" element={<Login></Login>}></Route>
-				<Route path="/sign" element={<SignUp></SignUp>}></Route>
+				<Route path="/signup" element={<SignUp></SignUp>}></Route>
 			</Routes>
 		</div>
 	);

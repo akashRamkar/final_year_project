@@ -23,11 +23,11 @@ function Navbar() {
 						</li>
 						<li className=" font-Mulish text-[20px]">
 							<Link to="/login">
-								<a href="">Log in</a>
+								<a href="#">Log in</a>
 							</Link>
 						</li>
 						<li className=" font-Mulish text-[20px]">
-							<Link to="/sign">
+							<Link to="/signup">
 								<a href="">Sign up</a>
 							</Link>
 						</li>

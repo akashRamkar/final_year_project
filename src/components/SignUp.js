@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // const express = require("express");
 // const { MongoClient } = require("mongodb");
 
-const uri =
-	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
+// const uri =
+// 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
 
 function SignUp() {
 	const [email, setEmail] = useState("");
@@ -33,7 +33,9 @@ function SignUp() {
 							<label
 								htmlFor="name"
 								className="block text-sm font-medium text-gray-700"
-							></label>
+							>
+								User Name
+							</label>
 							<div className="mt-1">
 								<input
 									id="name"

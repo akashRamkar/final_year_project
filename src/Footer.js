@@ -2,7 +2,7 @@ import "./footer.css";
 import "./utilityClass.css";
 export default function Footer() {
 	return (
-		<div class="footer-container">
+		<div class="footer-container ">
 			<footer>
 				<ul class="footer-list">
 					<li>

@@ -13,7 +13,7 @@ module.exports = {
         card_background:"F0ECF9",
         para1:"#000000",
         para2:"#666B6E",
-        bckg:"#F0F7FF"
+        bckg:"#F0F7FF",
       },
       fontFamily:{
         Mulish:['Mulish', 'sans-serif'],

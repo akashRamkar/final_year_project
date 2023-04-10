@@ -52,8 +52,8 @@ function Form() {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<div className="flex-col justify-center items-center">
-					<div>
+				<div className="flex-col justify-center items-center mx-auto">
+					<div className=" flex justify-center items-center">
 						{/* <label htmlFor="input-text">Enter text:</label> */}
 						<textarea
 							id="input-text"
@@ -77,10 +77,10 @@ function Form() {
 			) : (
 				<p>{"no response from model"}</p>
 			)}
-			{/* <div>
+			<div>
 				Response:
 				{response === null ? "ai response not generated" : response}
-			</div> */}
+			</div>
 		</>
 	);
 }

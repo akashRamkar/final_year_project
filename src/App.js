@@ -18,21 +18,21 @@ import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
 
 function App() {
-	const [used, setUsed] = useState(data);
-	return (
-		<div className="App1">
-			<Navbar />
+  const [used, setUsed] = useState(data);
+  return (
+    <div className="App1">
+      <Navbar />
 
-			<Routes>
-				<Route
-					path="/"
-					element={<Mainsection used={used}></Mainsection>}
-				></Route>
-				<Route path="/login" element={<Login></Login>}></Route>
-				<Route path="/sign" element={<SignUp></SignUp>}></Route>
-			</Routes>
-		</div>
-	);
+      <Routes>
+        <Route
+          path="/"
+          element={<Mainsection used={used}></Mainsection>}
+        ></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/sign" element={<SignUp></SignUp>}></Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

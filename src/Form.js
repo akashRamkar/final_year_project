@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./utilityClass.css";
+// import "./utilityClass.css";
 import { useState } from "react";
 
 import LoadingScreen from "./LoadingScreen";
@@ -52,26 +52,26 @@ function Form() {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<div className="flex-col justify-center items-center mx-auto">
-					<div className=" flex justify-center items-center">
-						{/* <label htmlFor="input-text">Enter text:</label> */}
+				<div className="flex-col justify-center items-center">
+					<div>
 						<textarea
 							id="input-text"
 							ref={textareaRef}
 							value={message}
 							placeholder="Summarize your text"
-							className="w-500 h-250 text-area-border overflow-y-scroll"
+							className="w-500 h-250 text-area-border overflow-y-scroll "
 							onChange={(e) => setMessage(e.target.value)}
 						/>
 					</div>
 					<button className="text-area-btn rounded" type="submit">
 						Submit
 					</button>
+
 					<button onClick={clearTextArea}>Clear Window</button>
 				</div>
 			</form>
-			<LoadingScreen isLoading={showSpinner} />
 
+			<LoadingScreen isLoading={showSpinner} />
 			{response !== null ? (
 				<div>{response}</div>
 			) : (
@@ -86,31 +86,3 @@ function Form() {
 }
 
 export default Form;
-/* 
-
-flex-col h-fit w-full justify-center items-center
-
-w-500 h-250 text-area-border
-
-text-area-btn rounded 
-
-*/
-
-/*
-const handleSubmit = (e) => {
-	// e.preventDefault();
-
-	fetch("http://localhost:3001/", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ message }),
-	})
-		.then((res) => {
-			res.json();
-		})
-		.then((data) => setResponse(data.message));
-};
-
-*/

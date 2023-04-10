@@ -17,8 +17,8 @@ function Navbar() {
 							</Link>
 						</li>
 						<li className=" font-Mulish text-[20px]">
-							<Link to="/">
-								<a href="#">Contact</a>
+							<Link to="/files">
+								<a href="#">MyFiles</a>
 							</Link>
 						</li>
 						<li className=" font-Mulish text-[20px]">

@@ -1,9 +1,9 @@
 // import model_pass from "./key.js";
 const OpenAI = require("openai");
 const { Configuration, OpenAIApi } = OpenAI;
-require("dotenv").config();
+require("dotenv").config({ path: ".env.local" });
 
-const myModel = process.env.REACT_APP_MODEL;
+// const myModel = process.env.REACT_APP_MODEL;
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -13,8 +13,8 @@ const port = 3001;
 
 // openai configuration
 const configuration = new Configuration({
-	organization: "org-xFFGV1X6OFUQkydj7x5kCHwh",
-	apiKey: "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",
+	organization: process.env.REACT_APP_ORG,
+	apiKey: process.env.REACT_APP_MODEL_KEY,
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();

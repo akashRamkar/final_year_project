@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Mainsection from "./Mainsection";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
+import FilesPage from "./components/FilesPage";
 // import { AuthProvider } from "./AuthContext";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 				></Route>
 				<Route path="/login" element={<Login></Login>}></Route>
 				<Route path="/signup" element={<SignUp></SignUp>}></Route>
+				<Route path="/files" element={<FilesPage></FilesPage>}></Route>
 			</Routes>
 		</div>
 	);

@@ -14,6 +14,15 @@ module.exports = {
         para1:"#000000",
         para2:"#666B6E",
         bckg:"#F0F7FF",
+        richblack: {
+          5: "#F1F2FF",
+          25: "#DBDDEA",
+          100: "#AFB2BF",
+          200: "#999DAA",
+          700: "#2C333F",
+          800: "#161D29",
+          900: "#000814",
+        }
       },
       fontFamily:{
         Mulish:['Mulish', 'sans-serif'],

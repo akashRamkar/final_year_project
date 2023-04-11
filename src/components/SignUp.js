@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../AuthContext";
+import { AppContext } from "../context/AppContext";
 
 // const express = require("express");
 // const { MongoClient } = require("mongodb");
@@ -9,6 +10,8 @@ import { useAuth } from "../AuthContext";
 // 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
 
 function SignUp() {
+	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
@@ -19,6 +22,8 @@ function SignUp() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		setIsLoggedIn(true);
 		console.log("email:", email);
 		console.log("password:", password);
 		console.log("confirmPassword:", confirmPassword);
@@ -32,6 +37,7 @@ function SignUp() {
 			window.alert("singup success");
 			// path to navigate and TODOS:
 			//  example :- navigate("/home");
+			navigate("/files");
 		} catch {
 			window.alert("!!! signup FAILED!!!!!!!11");
 			setError("Failed to sign up the user");

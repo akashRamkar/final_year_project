@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router";
+import { AppContext } from "../context/AppContext";
 // const uri =
 // 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
 
-function Login() {
+function Login() {	
+	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+
 	const { currentuser, signIn } = useAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 	const handleSubmit = async (e) => {
-		e.preventDefault();
 
+		
+		e.preventDefault();
+        setIsLoggedIn(true);
 		console.log("email:", email);
 
 		console.log("password:", password);
 		await signIn(email, password);
 		// path to navigate and TODOS:
-		// example :- navigate("/signup");
+		 navigate("/files");
 	};
 
 	return (

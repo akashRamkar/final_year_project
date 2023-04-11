@@ -12,12 +12,12 @@ import Due from "./components/Due_section";
 import Footer from "./components/Footer_section";
 //  import data from './data'
 // import { useState } from 'react';
-import Navbar from "./components/Navbar";
+
 
 const Mainsection = ({ used }) => {
 	return (
 		<div className="App">
-			{/* <Navbar /> */}
+			
 			<Herosection></Herosection>
 			<Informationsection></Informationsection>
 			<Summarizebox></Summarizebox>

@@ -16,51 +16,45 @@ function Navbar() {
 					<ul className="flex  flex-row gap-x-5 items-center">
 						<li className=" font-Mulish text-[20px] text-para1 inline-block">
 							{
-								
 								<Link to="/">
-									<a>
-										<button>Home</button>
-									</a>
+									<button>Home</button>
 								</Link>
 							}
 						</li>
 						<li className=" font-Mulish text-[20px] inline-block">
-
-							{ isLoggedIn&&
+							{isLoggedIn && (
 								<Link to="/files">
-									<a href="#"><button>MyFiles</button></a>
+									<button>MyFiles</button>
 								</Link>
-							}
-
+							)}
 						</li>
 						{/* className={`${!isLoggedIn===false?"hidden":"font-Mulish text-[20px]"}`} */}
 						<li className=" font-Mulish text-[20px] inline-block">
-							{!isLoggedIn&&
+							{!isLoggedIn && (
 								<Link to="/login">
-									<a href="#"><button>Log in</button></a>
+									<button>Log in</button>
 								</Link>
-							}
-
+							)}
 						</li>
 						<li className=" font-Mulish text-[20px] inline-block">
-							{!isLoggedIn&&
+							{!isLoggedIn && (
 								<Link to="/signup">
-									<a href=""><button>Sign up</button></a>
+									<button>Sign up</button>
 								</Link>
-							}
-
+							)}
 						</li>
 						<li className=" font-Mulish text-[20px] inline-block">
-							{ isLoggedIn&&
+							{isLoggedIn && (
 								<Link to="/">
-									<a href="">
-										<button onClick={()=>{
+									<button
+										onClick={() => {
 											setIsLoggedIn(false);
-										}}>Logout</button>
-									</a>
+										}}
+									>
+										Logout
+									</button>
 								</Link>
-							}
-
+							)}
 						</li>
 					</ul>
 				</div>

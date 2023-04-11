@@ -1,44 +1,34 @@
 import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { storage } from "../fireAuth";
-// import { currentUser } from "../AuthContext";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+
+import { ref, uploadBytes } from "firebase/storage";
+// listAll, getDownloadURL
 import "firebase/storage";
 import { useUserContext } from "../UserContext";
 import { AppContext } from "../context/AppContext";
-import { useAuth } from "../AuthContext";
-// import { auth } from "../fireAuth";
-// import { onAuthStateChanged } from "@firebase/auth";
-const FilesPage = () => {
-	const [pdfUpload, setPdfUpload] = useState(null);
-	const { userEmail, setUserEmail } = useUserContext();
-	const [pdfLists, setPdfLists] = useState([]);
-	const { currentUser, setCurrentUser } = useAuth();
 
-	// fetching data form context APi
-	const mail = userEmail === null ? localStorage.getItem("user") : userEmail;
+const FilesPage = () => {
+	const { formData, setFormData } = useContext(AppContext);
+	const [pdfUpload, setPdfUpload] = useState(null);
+	const { userEmail } = useUserContext();
+	// const [pdfLists, setPdfLists] = useState([]);
+
 	const { accountType, setAccountType } = useContext(AppContext);
-	const storageRef = ref(storage, `${mail}/${pdfUpload?.name}`);
-	function getUserEmail() {
-		return JSON.stringify(currentUser.email);
-	}
-	const uploadPdfData = async () => {
+	const storageRef = ref(storage, `${userEmail}/${pdfUpload?.name}`);
+
+	const uploadPdfData = async (e) => {
+		e.preventDefault();
 		if (pdfUpload === null) {
 			window.alert("null return from upload~");
 			return;
 		}
-		window.alert(storageRef);
-		// window.alert(userEmail);
-		window.alert("mail is ::::  " + mail);
+		console.log("pdf name is : " + pdfUpload?.name);
 		uploadBytes(storageRef, pdfUpload).then((snapshot) => {
 			window.alert(snapshot);
-			console.log("Uploaded a blob or file!");
 		});
-		window.alert("upload successful!!");
-		// window.alert("useremail is : " + userEmail);
+		console.log("upload successful!!");
 	};
-	// fetching data form context Api
-	const { formData, setFormData } = useContext(AppContext);
 
 	function changeHandler(event) {
 		setFormData((prevData) => ({

@@ -22,7 +22,7 @@ function LoadingScreen({ isLoading }) {
 	return (
 		<>
 			<div className="center">
-				<div class="loader-Div"></div>
+				<div className="loader-Div"></div>
 			</div>
 		</>
 	);

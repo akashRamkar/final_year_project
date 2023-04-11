@@ -1,23 +1,22 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router";
 import { AppContext } from "../context/AppContext";
 import { useUserContext } from "../UserContext";
-import { auth } from "../fireAuth";
-import { onAuthStateChanged } from "@firebase/auth";
+
 // const uri =
 // 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
 
 function Login() {
-	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+	const { setIsLoggedIn } = useContext(AppContext);
 
 	const { signIn } = useAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-	const { userEmail, setUserEmail } = useUserContext();
-	// const { currentUser, setCurrentUser } = useAuth();
+	const { setUserEmail } = useUserContext();
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsLoggedIn(true);
@@ -26,7 +25,7 @@ function Login() {
 		console.log("password:", password);
 		await signIn(email, password);
 		setUserEmail(email);
-		window.alert("useremail is : " + email);
+
 		// path to navigate and TODOS:
 		navigate("/files");
 	};

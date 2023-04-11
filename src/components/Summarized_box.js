@@ -47,10 +47,11 @@ function Summarizebox() {
 	}
 
 	return (
-		<div className="border-2 py-14 w-full relative mx-auto flex justify-center items-center" id="project">
+		<div
+			className="border-2 py-14 w-full relative mx-auto flex justify-center items-center"
+			id="project"
+		>
 			<div className="flex flex-1 gap-1  mx-auto justify-center items-center">
-
-				
 				<form
 					onSubmit={handleSubmit}
 					className="outline-none relative rounded-sm"

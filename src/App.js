@@ -8,13 +8,12 @@ import Mainsection from "./Mainsection";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import FilesPage from "./components/FilesPage";
-// import { AuthProvider } from "./AuthContext";
 
 function App() {
-  const [used, setUsed] = useState(data);
-  return (
-    <div className="App1">
-      <Navbar />
+	const [used, setUsed] = useState(data);
+	return (
+		<div className="App1">
+			<Navbar />
 
 			<Routes>
 				<Route

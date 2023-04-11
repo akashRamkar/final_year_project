@@ -18,10 +18,14 @@ export default function AuthProvider(props) {
 		}
 		console.log(`received mail->${email} and received pass is ->${password}! `);
 		await createUserWithEmailAndPassword(auth, email, password);
+		setCurrentUser(email);
+		localStorage.setItem("user", email);
 	}
 	async function signIn(email, password) {
 		await signInWithEmailAndPassword(auth, email, password);
 		window.alert("successfull sign in");
+		setCurrentUser(email);
+		localStorage.setItem("user", email);
 	}
 	useEffect(() => {
 		const unsubsrcibe = onAuthStateChanged(auth, (user) => {

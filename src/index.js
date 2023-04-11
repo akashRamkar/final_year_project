@@ -4,28 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
- import AppContextProvider from "./context/AppContext.js"
+import AppContextProvider from "./context/AppContext.js";
 import AuthProvider from "./AuthContext";
-// import firebase from "firebase/compat/app";
-// const firebaseConfig = {
-// 	// Your project's configuration object
-// };
-
-// firebase.initializeApp(firebaseConfig);
+import UserDataProvider from "./UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-
 	<AppContextProvider>
-	
 		<AuthProvider>
 			<BrowserRouter>
-				<App />
+				<UserDataProvider>
+					<App />
+				</UserDataProvider>
 			</BrowserRouter>
 		</AuthProvider>
-
 	</AppContextProvider>
-
 );
 
 // If you want to start measuring performance in your app, pass a function

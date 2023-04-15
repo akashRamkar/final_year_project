@@ -48,7 +48,7 @@ function Form() {
 
 		textArea.value = "";
 		setResponse("");
-		// setIsLoading(false);
+		setIsLoading(false);
 	}
 
 	return (

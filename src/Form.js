@@ -7,7 +7,7 @@ import LoadingScreen from "./LoadingScreen";
 function Form() {
 	const [message, setMessage] = useState("");
 	const [response, setResponse] = useState("");
-	const [showSpinner, setIsLoading] = useState("");
+	const [showSpinner, setIsLoading] = useState(false);
 	const textareaRef = useRef(null);
 	// setIsLoading(false);
 
@@ -28,6 +28,7 @@ function Form() {
 
 			// Throw an error if the response status is not OK
 			if (!response.ok) {
+				setIsLoading(false);
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
 
@@ -35,6 +36,7 @@ function Form() {
 			setIsLoading(false);
 			setResponse(data.message);
 		} catch (error) {
+			setIsLoading(false);
 			console.error(error);
 		}
 	};

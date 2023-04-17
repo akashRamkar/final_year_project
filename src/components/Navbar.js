@@ -22,7 +22,7 @@ function Navbar() {
 							}
 						</li>
 						<li className=" font-Mulish text-[20px] inline-block">
-							{isLoggedIn && (
+							{ isLoggedIn&&(
 								<Link to="/files">
 									<button>MyFiles</button>
 								</Link>

@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import AppContextProvider from "./context/AppContext.js";
 import AuthProvider from "./AuthContext";
 import UserDataProvider from "./UserContext";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,8 @@ root.render(
 			<BrowserRouter>
 				<UserDataProvider>
 					<App />
+					{/* <Toaster/> */}
+					<Toaster></Toaster>
 				</UserDataProvider>
 			</BrowserRouter>
 		</AuthProvider>

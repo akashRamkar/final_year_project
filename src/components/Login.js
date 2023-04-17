@@ -4,6 +4,7 @@ import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router";
 import { AppContext } from "../context/AppContext";
 import { useUserContext } from "../UserContext";
+import { toast } from "react-hot-toast";
 
 // const uri =
 // 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
@@ -25,6 +26,7 @@ function Login() {
 		console.log("password:", password);
 		await signIn(email, password);
 		setUserEmail(email);
+		toast.success("login successful");
 
 		// path to navigate and TODOS:
 		navigate("/files");

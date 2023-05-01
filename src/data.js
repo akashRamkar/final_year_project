@@ -43,8 +43,6 @@ const data = [
 		name: "Journalists",
 		info: "Journalists need to summarize long articles for their newspaper or magazine.",
 		img:img5
-
-		
 	},
 ];
 export default data;

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import { toast } from "react-hot-toast";
 
 function Navbar() {
 	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
@@ -48,6 +49,7 @@ function Navbar() {
 									<button
 										onClick={() => {
 											setIsLoggedIn(false);
+											toast.success("User Logged out!");
 										}}
 									>
 										Logout

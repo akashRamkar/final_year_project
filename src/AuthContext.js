@@ -27,6 +27,17 @@ export default function AuthProvider(props) {
 
 		localStorage.setItem("user", email);
 	}
+	function getCurrentUser() {
+		const user = auth.currentUser;
+
+		if (user) {
+			return user;
+		} else {
+			// user is signed out
+			console.log("current user received is empty");
+			return null;
+		}
+	}
 	useEffect(() => {
 		const unsubsrcibe = onAuthStateChanged(auth, (user) => {
 			if (user) {
@@ -42,6 +53,7 @@ export default function AuthProvider(props) {
 		currentUser,
 		signup,
 		signIn,
+		getCurrentUser,
 	};
 	return (
 		<Authcontext.Provider value={value}>{props.children}</Authcontext.Provider>

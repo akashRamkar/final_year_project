@@ -2,21 +2,46 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { storage } from "../fireAuth";
 
-import { ref, uploadBytes } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 // listAll, getDownloadURL
+
 import "firebase/storage";
 import { useUserContext } from "../UserContext";
 import { AppContext } from "../context/AppContext";
+import { useAuth } from "../AuthContext";
 
 const FilesPage = () => {
 	const { formData, setFormData } = useContext(AppContext);
 	const [pdfUpload, setPdfUpload] = useState(null);
 	const { userEmail } = useUserContext();
+	const { currentUser, getCurrentUser } = useAuth();
 	// const [pdfLists, setPdfLists] = useState([]);
 
 	const { accountType, setAccountType } = useContext(AppContext);
 	const storageRef = ref(storage, `${userEmail}/${pdfUpload?.name}`);
+	const getPdfData = async () => {
+		// e.preventDefault();
+		const user = getCurrentUser();
 
+		let email = ".";
+		if (currentUser) {
+			email = currentUser.email;
+		} else {
+			if (user === null) {
+				//something if null
+
+				console.log("returning as user is null !! no pdf link");
+				return;
+			} else {
+				email = user.email;
+			}
+		}
+
+		const url = await getDownloadURL(
+			ref(storage, `${email}/${pdfUpload?.name}`)
+		);
+		console.log(url);
+	};
 	const uploadPdfData = async (e) => {
 		e.preventDefault();
 		if (pdfUpload === null) {
@@ -28,6 +53,7 @@ const FilesPage = () => {
 			window.alert(snapshot);
 		});
 		console.log("upload successful!!");
+		getPdfData();
 	};
 
 	function changeHandler(event) {

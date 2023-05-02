@@ -4,12 +4,6 @@ import { useAuth } from "../AuthContext";
 import { AppContext } from "../context/AppContext";
 import { toast } from "react-hot-toast";
 
-// const express = require("express");
-// const { MongoClient } = require("mongodb");
-
-// const uri =
-// 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
-
 function SignUp() {
 	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
 
@@ -34,14 +28,13 @@ function SignUp() {
 		try {
 			setError(" ");
 			await signup(email, password);
-			// await signInWithEmailAndPassword(auth, email, password);
-			// window.alert("singup success");
-			toast.success("Account created Successfully")
+
+			toast.success("Account created Successfully");
 			// path to navigate and TODOS:
 			//  example :- navigate("/home");
 			navigate("/files");
 		} catch {
-			window.alert("!!! signup FAILED!!!!!!!11");
+			toast.error("!!! signup FAILED!!!!!!!11");
 			// toast.failuer
 			setError("Failed to sign up the user");
 		}

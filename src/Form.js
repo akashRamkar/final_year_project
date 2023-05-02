@@ -9,7 +9,6 @@ function Form() {
 	const [response, setResponse] = useState("");
 	const [showSpinner, setIsLoading] = useState(false);
 	const textareaRef = useRef(null);
-	// setIsLoading(false);
 
 	const handleSubmit = async (e) => {
 		// Prevent the default form submission behavior
@@ -17,7 +16,7 @@ function Form() {
 
 		try {
 			setIsLoading(true);
-			// <Loading isLoading={true} />
+
 			const response = await fetch("http://localhost:3001/", {
 				method: "POST",
 				headers: {

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import { toast } from "react-hot-toast";
 
-// import react
 function Navbar() {
 	const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
 	return (
@@ -22,7 +22,7 @@ function Navbar() {
 							}
 						</li>
 						<li className=" font-Mulish text-[20px] inline-block">
-							{ isLoggedIn&&(
+							{isLoggedIn && (
 								<Link to="/files">
 									<button>MyFiles</button>
 								</Link>
@@ -49,6 +49,7 @@ function Navbar() {
 									<button
 										onClick={() => {
 											setIsLoggedIn(false);
+											toast.success("User Logged out!");
 										}}
 									>
 										Logout

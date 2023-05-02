@@ -6,9 +6,6 @@ import { AppContext } from "../context/AppContext";
 import { useUserContext } from "../UserContext";
 import { toast } from "react-hot-toast";
 
-// const uri =
-// 	"mongodb+srv://akashrramkar2001:fjqXcPwVXBl8R2y7@cluster0.5fjxfqh.mongodb.net/?retryWrites=true&w=majority";
-
 function Login() {
 	const { setIsLoggedIn } = useContext(AppContext);
 

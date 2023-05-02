@@ -3,7 +3,7 @@ import Hero from "./Assest/hero.png";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 function Herosection() {
 	const [text] = useTypewriter({
-		words: ["article", "text", "Pepar", "easy"],
+		words: ["article", "text", "paper", "easy"],
 		loop: {},
 	});
 	return (

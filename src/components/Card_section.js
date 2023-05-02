@@ -3,7 +3,7 @@
 function Card({ id, name, info, img }) {
 	return (
 		<div class=" flex flex-row gap-x-20 justify-center items-center shadow-xl ">
-			<div class="max-w-[235px] min-h-[272px] flex flex-col ">
+			<div class="max-w-[235px] min-h-[272px] flex flex-col hover:scale-110 transition-all duration-500	 ">
 				<div class="w-full min-h-[135px] bg-box_inside flex items-center justify-center">
 					<img src={img} alt="" width="28%" id="chn" />
 				</div>

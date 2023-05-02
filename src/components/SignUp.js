@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../AuthContext";
 import { AppContext } from "../context/AppContext";
+import { toast } from "react-hot-toast";
 
 // const express = require("express");
 // const { MongoClient } = require("mongodb");
@@ -34,12 +35,14 @@ function SignUp() {
 			setError(" ");
 			await signup(email, password);
 			// await signInWithEmailAndPassword(auth, email, password);
-			window.alert("singup success");
+			// window.alert("singup success");
+			toast.success("Account created Successfully")
 			// path to navigate and TODOS:
 			//  example :- navigate("/home");
 			navigate("/files");
 		} catch {
 			window.alert("!!! signup FAILED!!!!!!!11");
+			// toast.failuer
 			setError("Failed to sign up the user");
 		}
 	};

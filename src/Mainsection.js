@@ -13,7 +13,6 @@ import Footer from "./components/Footer_section";
 //  import data from './data'
 // import { useState } from 'react';
 
-
 const Mainsection = ({ used }) => {
 	return (
 		<div className="App">

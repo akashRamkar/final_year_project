@@ -9,6 +9,7 @@ import "firebase/storage";
 import { useUserContext } from "../UserContext";
 import { AppContext } from "../context/AppContext";
 import { useAuth } from "../AuthContext";
+import { toast } from "react-hot-toast";
 
 const FilesPage = () => {
 	const { formData, setFormData } = useContext(AppContext);
@@ -44,6 +45,7 @@ const FilesPage = () => {
 	};
 	const uploadPdfData = async (e) => {
 		e.preventDefault();
+
 		if (pdfUpload === null) {
 			window.alert("null return from upload~");
 			return;
@@ -54,6 +56,8 @@ const FilesPage = () => {
 		});
 		console.log("upload successful!!");
 		getPdfData();
+		toast.success("Upload successful!!");
+		// console.log("upload successful!!");
 	};
 
 	function changeHandler(event) {
@@ -94,7 +98,7 @@ const FilesPage = () => {
 			</div>
 
 			{accountType === "student" && (
-				<div className=" w-3/12  opacity-80   mx-auto flex rounded-md py-10 drop-shadow-2xl mt-16 bg-white">
+				<div className=" w-[400px]  opacity-80   mx-auto flex rounded-md py-10 drop-shadow-2xl mt-16 bg-white">
 					<form className="flex flex-col gap-y-4 ml-10">
 						<label>
 							<p className="text-black font-Mulish font-medium">

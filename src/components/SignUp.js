@@ -142,7 +142,7 @@ function SignUp() {
 					</form>
 				</div>
 			</div>
-			{JSON.stringify(currentUser)}
+			{/* {JSON.stringify(currentUser)} */}
 		</div>
 	);
 }

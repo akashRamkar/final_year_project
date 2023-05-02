@@ -8,9 +8,11 @@
     /* z-index: 2px; */
   }
   .center{
-    position: relative;
+    position: absolute;
     width: 100vw;
     display: flex;
+    top:46%;
+    left:3%;
     justify-content: center;
   }
   .spinner {

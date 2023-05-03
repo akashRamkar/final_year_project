@@ -9,7 +9,7 @@ function AppContextProvider({children}){
       const[accountType,setAccountType] =useState("student");
 
       const [formData, setFormData] = useState({
-        subject: "Java",
+        subject: "",
       });
       const value={
         isLoggedIn,

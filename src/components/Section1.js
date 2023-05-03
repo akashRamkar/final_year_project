@@ -5,7 +5,7 @@ function Section1(){
     return(
         <div className="w-full relative mt-20">
             <div className="max-w-[1100px] w-11/12 relative mx-auto flex flex-row items-center justify-between ">
-                <img src={Sectiononeimg} alt="" class="w-[43%] pt-16" />
+                <img src={Sectiononeimg} alt="" className="w-[43%] pt-16 hover:scale-110 transition-all duration-500" />
                 <div className="max-w-[498px] flex flex-col items-start gap-y-6  ">
                     <div className="flex flex-col gap-y-2"> 
                         <h2 className="  text-4xl font-Heebo text-Heading_tag font-bold">100% Automatic Article</h2>

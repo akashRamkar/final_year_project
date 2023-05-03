@@ -17,16 +17,23 @@ function Login() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setIsLoggedIn(true);
-		console.log("email:", email);
+		try {
+			console.log("email:", email);
 
-		console.log("password:", password);
-		await signIn(email, password);
-		setUserEmail(email);
-		toast.success("login successful");
+			console.log("password:", password);
+			await signIn(email, password);
+			setIsLoggedIn(true);
+			setUserEmail(email);
+			toast.success("login successful");
 
-		// path to navigate and TODOS:
-		navigate("/files");
+			// path to navigate and TODOS:
+			navigate("/files");
+		} catch (error) {
+			setEmail((p) => "");
+			setPassword("");
+
+			toast.error("account does not exist! please sign up!");
+		}
 	};
 
 	return (
